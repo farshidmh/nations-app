@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'countries',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'countries',
         ],
     ],
 
@@ -60,9 +60,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'countries' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => \App\Models\General\Country::class,
         ],
 
         // 'users' => [
@@ -87,7 +87,7 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        'countries' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
